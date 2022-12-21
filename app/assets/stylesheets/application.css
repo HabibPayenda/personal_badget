@@ -66,3 +66,49 @@
   background-color: var(--color_blue);
   color: #eee;
  }
+
+ .statusBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  height: 40px;
+  background-color: var(--color_blue);
+ }
+
+.loginFormContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 10px;
+  width: 100%;
+  /* background-color: #3778c2; */
+}
+
+.new_user {
+  width: 100% ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;  
+}
+
+.formField {
+  flex: 1;
+  margin-bottom: 10px;
+  height: 40px;
+  background-color: white;
+  width: 90%;
+  border: solid #eee 1px;
+  outline: none;
+  padding: 5px;
+}
