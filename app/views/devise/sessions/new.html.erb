@@ -1,0 +1,25 @@
+<%= render 'shared/status_bar'%>
+<div class="loginFormContainer">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "loginForm") do |f| %>
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "formField" %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password, autocomplete: "current-password", class: "formField" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>
+<%= link_to "Forgot password?", new_password_path(resource_name) %><br />
+</div>
+
