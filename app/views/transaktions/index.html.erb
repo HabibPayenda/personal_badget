@@ -14,35 +14,30 @@
     </div>
   <% end %>
 </div>
-<div>
+<div class="categoryTransactionDetails">
+<img src="<%= @categorie.icon %>" width=30 height=30>
   <div>
-    Total Amount
-  </div>
-  <div>
+    Total Amount:
     <%= @categorie.transaktion_categories.sum {|tc| tc.transaktion.amount } %>$
   </div>
 </div>
-<div>
+<div class="categoryCardsContainer">
   <% @transaktions.order(created_at: :desc).each do |transaktion| %>
-    <div>
-      <div>
-        <p>
+    <div class="categoryCard">
+      <div class="categoryDetails">
+        <p class="categoryNameContainer">
           <%= transaktion.name %>
         </p>
-        <p>
-          <%= transaktion.amount %>$
+        <p class="categoryTotalContainer">
+          $<%= transaktion.amount %>
         </p>
       </div>
     </div>
   <% end %>
-  <div>
-    <%= link_to 'Add a new Transaction', new_category_transaktion_path(params[:category_id]), class: 'link-style' %>
+  <div class="newCategoryBtnContainer">
+    <%= link_to 'Add a new Transaction', new_category_transaktion_path(params[:category_id]), class: 'addCategoryBtn' %>
   </div>
 </div>
 <div>
-  <img src="<%= @categorie.icon %>" width=30 height=30>
-  <p>
-    You are looking at <%= @categorie.name %> Categorie transactions
-  </p>
 </div>
 </div>
