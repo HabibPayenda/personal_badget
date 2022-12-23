@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class TransaktionsController < ApplicationController
   before_action :set_author
 

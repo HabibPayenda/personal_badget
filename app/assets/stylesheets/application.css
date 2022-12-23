@@ -14,23 +14,23 @@
  *= require_self
  */
 
- :root {
+:root {
   --color_blue: #3778c2;
   --color_green: #5fb523;
   --color_gray: #434b54;
- }
+}
 
- html {
+html {
   background-color: #eee !important;
- }
+}
 
- * {
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
- }
+}
 
- .splashContainer {
+.splashContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,25 +38,25 @@
   flex: 1;
   height: 100vh;
   background-color: white;
- }
+}
 
- .splashContainerTop {
+.splashContainerTop {
   display: flex;
   align-items: center;
   justify-content: center;
   flex: 4;
- }
+}
 
- .splashContainerBottom {
+.splashContainerBottom {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100% !important;
   gap: 10px;
- }
+}
 
- .btn {
+.btn {
   flex: 1;
   height: 40px;
   width: 280px;
@@ -65,12 +65,12 @@
   outline: none;
   box-shadow: none;
   text-transform: uppercase;
- }
+}
 
- .btnLogin {
+.btnLogin {
   background-color: var(--color_blue);
   color: #eee;
- }
+}
 
 .loginFormContainer {
   display: flex;
@@ -80,11 +80,12 @@
   margin-top: 10px;
   gap: 10px;
   width: 100%;
+
   /* background-color: #3778c2; */
 }
 
 .new_user {
-  width: 100% ;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -104,7 +105,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;  
+  width: 100%;
 }
 
 .formField {
@@ -153,18 +154,18 @@
   height: 40px;
   background-color: var(--color_blue);
   width: 100%;
- }
+}
 
- .statusBarTitle {
+.statusBarTitle {
   color: #eee;
- }
+}
 
- .backIcon {
+.backIcon {
   height: 20px;
   width: 30px;
- }
+}
 
- .categoryCardsContainer {
+.categoryCardsContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -172,21 +173,21 @@
   width: 100%;
   gap: 15px;
   margin-top: 10px;
- }
+}
 
- .cards {
+.cards {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
- }
+}
 
- .cards:active,
- .cards:link,
- .cards:visited {
+.cards:active,
+.cards:link,
+.cards:visited {
   color: var(--color_gray);
   text-decoration: none;
- }
+}
 
 .categoryCard {
   display: flex;
@@ -238,16 +239,16 @@
 .addCategoryBtn {
   color: white;
   padding: 5% 15%;
-  border: solid 1px white; 
-  text-decoration: none; 
+  border: solid 1px white;
+  text-decoration: none;
   text-transform: uppercase;
 }
 
 .addCategoryBtnB {
   color: white;
   padding: 5% 15%;
-  border: solid 1px white; 
-  text-decoration: none; 
+  border: solid 1px white;
+  text-decoration: none;
   text-transform: uppercase;
   background-color: transparent;
 }
