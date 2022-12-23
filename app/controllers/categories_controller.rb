@@ -1,6 +1,41 @@
-# frozen_string_literal: true
-
 class CategoriesController < ApplicationController
-  load_and_authorize_resource
-  def index; end
+  before_action :set_author
+
+  def index
+    @categories = @author.categories
+  end
+
+  def new
+    @categorie = Categorie.new
+  end
+
+  def show
+    @categorie = Categorie.find(params[:id])
+    @transaktions = []
+    @categorie.transaktion_categories.order(:id).each do |some|
+      @transaktions.push(some.transaktion)
+    end
+  end
+
+  def create
+    @categorie = Categorie.new(categorie_params)
+    @categorie.author = @author
+    if @categorie.save
+      redirect_to categories_path
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def categorie_params
+    params.require(:categorie).permit(:name, :icon)
+  end
+end
+
+private
+
+def set_author
+  @author = current_user
 end

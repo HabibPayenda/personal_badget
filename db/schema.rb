@@ -21,7 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 20_221_219_193_203) do
     t.string 'icon'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
-    t.bigint 'author_id'
+    t.bigint 'author_id', null: false
     t.index ['author_id'], name: 'index_categories_on_author_id'
   end
 
@@ -29,8 +29,8 @@ ActiveRecord::Schema[7.0].define(version: 20_221_219_193_203) do
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
     t.bigint 'transaktion_id'
-    t.bigint 'category_id'
-    t.index ['category_id'], name: 'index_transaktion_categories_on_category_id'
+    t.bigint 'categorie_id'
+    t.index ['categorie_id'], name: 'index_transaktion_categories_on_categorie_id'
     t.index ['transaktion_id'], name: 'index_transaktion_categories_on_transaktion_id'
   end
 
@@ -39,7 +39,7 @@ ActiveRecord::Schema[7.0].define(version: 20_221_219_193_203) do
     t.integer 'amount'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
-    t.bigserial 'author_id', null: false
+    t.bigint 'author_id'
     t.index ['author_id'], name: 'index_transaktions_on_author_id'
   end
 
@@ -61,6 +61,7 @@ ActiveRecord::Schema[7.0].define(version: 20_221_219_193_203) do
   end
 
   add_foreign_key 'categories', 'users', column: 'author_id'
-  add_foreign_key 'transaktion_categories', 'categories'
+  add_foreign_key 'transaktion_categories', 'categories', column: 'categorie_id'
   add_foreign_key 'transaktion_categories', 'transaktions'
+  add_foreign_key 'transaktions', 'users', column: 'author_id'
 end

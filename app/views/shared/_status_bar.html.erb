@@ -1,2 +1,12 @@
 <div class="statusBar">
+<%if user_signed_in?%>
+<div>
+    <p>
+      Signed in as
+    </p>
+    <%= @author.email %>
+  </div>
+  
+<%= button_to 'Sign Out', destroy_user_session_path, method: :delete %>
+<%end%>
 </div>

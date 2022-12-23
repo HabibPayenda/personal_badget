@@ -1,0 +1,19 @@
+<%= form_with model: @categorie, local: true do |f| %>
+  <div class="statusBar">
+    <div>
+      <%= link_to image_tag(asset_path('back-arrow-icon.svg'), class: 'backIcon'), authenticated_root_path %>
+    </div>
+    <div>
+      <p class="statusBarTitle">
+    Add New Category
+    </p>
+    </div>
+    <div class="newCategoryBtnContainer">
+      <%= f.submit "SAVE", data: {turbo: false}, class: "addCategoryBtnB" %>
+    </div>
+  </div>
+  <div class="formFieldsContainer">
+  <%= f.text_field :name, placeholder: 'Name', class: 'formField' %>
+  <%= f.text_field :icon, placeholder: 'Image URL', class: 'formField' %>
+  </div>
+<% end %>
