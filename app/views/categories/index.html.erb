@@ -1,30 +1,34 @@
-<%= render 'shared/status_bar' %>
 <div class="categoriesContainer">
-<div>
+<div class="statusBar">
+<p class="statusBarTitle">
     CATAGORIES
+    </p>
+    <% if user_signed_in? %>
+    <div>
+      <%= button_to 'SIGN OUT', destroy_user_session_path, method: :delete, data: {turbo: false}, class: 'link-white' %>
+    </div>
+  <% end %>
   </div>
-<div>
+<div class="categoryCardsContainer">
   <% @categories.each do |categorie| %>
     <%= link_to category_transaktions_path(categorie.id), class: 'cards' do %>
-      <div>
-        <div>
-          <img src="<%= categorie.icon %>" width=60 height=60 >
+      <div class="categoryCard">
+        <div class="categoryImageContainer">
+          <img src="<%= categorie.icon %>" class="categoryIcon" >
         </div>
-        <div>
-          <div>
+        <div class="categoryDetails">
+          <div class="categoryNameContainer">
             <%= categorie.name %>
           </div>
-        </div>
-        <div>
-          <div>
-            <%= categorie.transaktion_categories.sum {|tc| tc.transaktion.amount } %>
+          <div class="categoryTotalContainer">
+            $<%= categorie.transaktion_categories.sum {|tc| tc.transaktion.amount } %>
           </div>
         </div>
-      </div>
+        </div>
     <% end %>
   <% end %>
-  <div class>
-    <%= link_to 'Add a new Categorie', new_category_path, class: 'link-style' %>
+  <div class="newCategoryBtnContainer">
+    <%= link_to 'Add a new Categorie', new_category_path, class: 'addCategoryBtn' %>
   </div>
 </div>
 

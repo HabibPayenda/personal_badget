@@ -20,6 +20,10 @@
   --color_gray: #434b54;
  }
 
+ html {
+  background-color: #eee !important;
+ }
+
  * {
   padding: 0;
   margin: 0;
@@ -65,15 +69,6 @@
  .btnLogin {
   background-color: var(--color_blue);
   color: #eee;
- }
-
- .statusBar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  height: 40px;
-  background-color: var(--color_blue);
  }
 
 .loginFormContainer {
@@ -129,4 +124,111 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
+}
+
+.transaktionsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.statusBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  height: 40px;
+  background-color: var(--color_blue);
+  width: 100%;
+ }
+
+ .statusBarTitle {
+  color: #eee;
+ }
+
+ .backIcon {
+  height: 20px;
+  width: 30px;
+ }
+
+ .categoryCardsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 15px;
+  margin-top: 10px;
+ }
+
+ .cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+ }
+
+ .cards:active,
+ .cards:link,
+ .cards:visited {
+  color: var(--color_gray);
+  text-decoration: none;
+ }
+
+.categoryCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  padding: 10px;
+  gap: 10px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.categoryImageContainer {
+  flex: 1;
+}
+
+.categoryIcon {
+  height: 50px;
+  width: 50px;
+}
+
+.categoryDetails {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 4;
+}
+
+.categoryNameContainer {
+  color: var(--color_gray);
+}
+
+.categoryTotalContainer {
+  font-weight: bold;
+}
+
+.newCategoryBtnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color_green);
+  height: 100px;
+}
+
+.addCategoryBtn {
+  color: white;
+  padding: 5% 15%;
+  border: solid 1px white; 
+  text-decoration: none; 
+  text-transform: uppercase;
 }
