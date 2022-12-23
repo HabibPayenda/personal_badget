@@ -7,12 +7,8 @@
     <p class="statusBarTitle">
     Add New Transaction
     </p>
-    </div>
-    <% if user_signed_in? %>
     <div>
-      <%= button_to 'SIGN OUT', destroy_user_session_path, method: :delete, data: {turbo: false}, class: 'link-white' %>
     </div>
-  <% end %>
     </div>
     <div class="newCategoryBtnContainer">
       <%= f.submit "SAVE", data: {turbo: false}, class: "addCategoryBtnB" %>
