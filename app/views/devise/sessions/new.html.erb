@@ -13,11 +13,11 @@
 <div class="loginFormContainer">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "loginForm") do |f| %>
   <div class="field">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "formField" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "formField", placeholder: "Email" %>
   </div>
 
   <div class="field">
-    <%= f.password_field :password, autocomplete: "current-password", class: "formField" %>
+    <%= f.password_field :password, autocomplete: "current-password", class: "formField", placeholder: "Password" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
