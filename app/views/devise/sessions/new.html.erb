@@ -1,4 +1,15 @@
-<%= render 'shared/status_bar'%>
+<div class="statusBar">
+    <div>
+      <%= link_to image_tag(asset_path('back-arrow-icon.svg'), class: 'backIcon'), unauthenticated_root_path %>
+    </div>
+    <div>
+      <p class="statusBarTitle">
+    Sign In
+    </p>
+    </div>
+  <div>
+  </div>
+</div>
 <div class="loginFormContainer">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "loginForm") do |f| %>
   <div class="field">
