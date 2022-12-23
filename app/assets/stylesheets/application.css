@@ -90,6 +90,15 @@
   justify-content: center;
 }
 
+.formFieldsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 30px;
+}
+
 .field {
   display: flex;
   align-items: center;
@@ -233,10 +242,27 @@
   text-transform: uppercase;
 }
 
+.addCategoryBtnB {
+  color: white;
+  padding: 5% 15%;
+  border: solid 1px white; 
+  text-decoration: none; 
+  text-transform: uppercase;
+  background-color: transparent;
+}
+
 .categoryTransactionDetails {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
   width: 100%;
+}
+
+.link-white {
+  background-color: transparent;
+  color: white;
+  box-shadow: none;
+  border: none;
+  outline: none;
 }

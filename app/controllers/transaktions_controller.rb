@@ -18,7 +18,7 @@ class TransaktionsController < ApplicationController
     @transaktion = @author.transaktions.new(transaktion_params)
     return unless @transaktion.save
 
-    @categorie_transaktion = TransaktionsCategories.new(transaktion: @transaktion, categorie: @categorie)
+    @categorie_transaktion = TransaktionCategory.new(transaktion: @transaktion, categorie: @categorie)
     redirect_to category_transaktions_path(@categorie.id) if @categorie_transaktion.save
   end
 

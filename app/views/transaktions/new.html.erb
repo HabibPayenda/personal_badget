@@ -1,24 +1,28 @@
 <%= form_with model: @transaktion, url: category_transaktions_path, local: true do |f| %>
-  <div>
+  <div class="statusBar">
     <div>
-      <%= link_to image_tag(asset_path('back-arrow-icon.svg'), class: 'back-arrow'), category_transaktions_path(@categorie) %>
+      <%= link_to image_tag(asset_path('back-arrow-icon.svg'), class: 'backIcon'), category_transaktions_path(@categorie) %>
     </div>
     <div>
-      <div>
-        TRANSACTION
-      </div>
+    <p class="statusBarTitle">
+    Add New Transaction
+    </p>
     </div>
+    <% if user_signed_in? %>
     <div>
-      <%= f.submit "SAVE", data: {turbo: false} %>
+      <%= button_to 'SIGN OUT', destroy_user_session_path, method: :delete, data: {turbo: false}, class: 'link-white' %>
+    </div>
+  <% end %>
+    </div>
+    <div class="newCategoryBtnContainer">
+      <%= f.submit "SAVE", data: {turbo: false}, class: "addCategoryBtnB" %>
     </div>
   </div>
-  <%= f.text_field :name, placeholder: 'Name', class: 'input-field' %>
-  <%= f.text_field :amount, placeholder: 'Amount', class: 'input-field' %>
+  <div class="formFieldsContainer">
+  <%= f.text_field :name, placeholder: 'Name', class: 'formField' %>
+  <%= f.text_field :amount, placeholder: 'Amount', class: 'formField' %>
   <div>
     <%= f.select :id, options_for_select(@categories.collect { | x | [x.name, x.id] })%>
   </div>
+  </div>
 <% end %>
-<div>
-  Hi <%= @author.name %>, you are creating a Transaction.
-  once you input 'Name', 'Amount' and choose the 'Categorie, click enter or save button.
-</div>
