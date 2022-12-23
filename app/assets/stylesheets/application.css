@@ -112,3 +112,21 @@
   outline: none;
   padding: 5px;
 }
+
+.noticeContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color_blue);
+}
+
+.notice {
+  color: white !important;
+}
+
+.categoriesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

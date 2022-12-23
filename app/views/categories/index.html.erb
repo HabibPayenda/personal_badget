@@ -1,3 +1,31 @@
-categories#index
+<%= render 'shared/status_bar' %>
+<div class="categoriesContainer">
+<div>
+    CATAGORIES
+  </div>
+<div>
+  <% @categories.each do |categorie| %>
+    <%= link_to category_transaktions_path(categorie.id), class: 'cards' do %>
+      <div>
+        <div>
+          <img src="<%= categorie.icon %>" width=60 height=60 >
+        </div>
+        <div>
+          <div>
+            <%= categorie.name %>
+          </div>
+        </div>
+        <div>
+          <div>
+            <%= categorie.transaktion_categories.sum {|tc| tc.transaktion.amount } %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  <div class>
+    <%= link_to 'Add a new Categorie', new_category_path, class: 'link-style' %>
+  </div>
+</div>
 
-<%= button_to 'Sign Out', destroy_user_session_path, method: :delete %>
+</div>

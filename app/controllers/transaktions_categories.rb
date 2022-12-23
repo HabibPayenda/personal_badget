@@ -1,6 +1,4 @@
-# frozen_string_literal: true
-
-class TransaktionCategory < ApplicationRecord
+class TransaktionCategorie < ApplicationRecord
   belongs_to :categorie
   belongs_to :transaktion
 

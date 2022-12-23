@@ -1,0 +1,44 @@
+<div>
+  <div>
+    <%= link_to image_tag(asset_path('back-arrow-icon.svg'), class: 'back-arrow'), root_path %>
+  </div>
+  <div>
+    TRANSACTIONS
+  </div>
+  <% if user_signed_in? %>
+    <div>
+      <%= button_to 'SIGN OUT', destroy_user_session_path, method: :delete, data: {turbo: false}, class: 'link-white' %>
+    </div>
+  <% end %>
+</div>
+<div>
+  <div>
+    Total Amount
+  </div>
+  <div>
+    <%= @categorie.transaktion_categories.sum {|tc| tc.transaktion.amount } %>$
+  </div>
+</div>
+<div>
+  <% @transaktions.order(created_at: :desc).each do |transaktion| %>
+    <div>
+      <div>
+        <p>
+          <%= transaktion.name %>
+        </p>
+        <p>
+          <%= transaktion.amount %>$
+        </p>
+      </div>
+    </div>
+  <% end %>
+  <div>
+    <%= link_to 'Add a new Transaction', new_category_transaktion_path(params[:category_id]), class: 'link-style' %>
+  </div>
+</div>
+<div>
+  <img src="<%= @categorie.icon %>" width=30 height=30>
+  <p>
+    You are looking at <%= @categorie.name %> Categorie transactions
+  </p>
+</div>

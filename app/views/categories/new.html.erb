@@ -1,0 +1,21 @@
+<%= form_with model: @categorie, local: true do |f| %>
+  <div>
+    <div>
+      <%= link_to image_tag(asset_path('back-arrow-icon.svg'), class: 'back-arrow'), root_path %>
+    </div>
+    <div>
+      <div>
+        CATAGORIE
+      </div>
+    </div>
+    <div>
+      <%= f.submit "SAVE", data: {turbo: false} %>
+    </div>
+  </div>
+  <%= f.text_field :name, placeholder: 'Name', class: 'input-field' %>
+  <%= f.text_field :icon, placeholder: 'Image URL', class: 'input-field' %>
+<% end %>
+<div>
+  Hi <%= @author.name %>, you are creating a categorie.
+  once you input 'Name' and 'Image url', click enter or save button.
+</div>
