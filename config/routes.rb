@@ -4,11 +4,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   devise_scope :user do
-    # Redirests signing out users back to sign-in
-    get "users", to: "users#splash"
-
+    authenticated :user do
+      root 'categories#index', as: :authenticated_root
+    end
+    unauthenticated do
+      root 'users#splash', as: :unauthenticated_root
+    end
   end
-  root "categories#index"
 
   resources :categories do
     resources :transaktions
