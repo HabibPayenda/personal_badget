@@ -73,3 +73,8 @@ end
 
 gem 'cancancan'
 gem 'devise', '~> 4.8'
+
+group :development, :test do
+  gem 'rspec-rails'
+end
+gem 'rails-controller-testing'
