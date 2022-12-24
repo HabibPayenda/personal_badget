@@ -16,7 +16,7 @@
 </div>
 <div class="categoryTransactionDetails">
 <img src="<%= @categorie.icon %>" width=30 height=30>
-  <div>
+  <div class="categoryTransactionDetailsTotal">
     Total Amount:
     <%= @categorie.transaktion_categories.sum {|tc| tc.transaktion.amount } %>$
   </div>

@@ -110,7 +110,6 @@ html {
 
 .formField {
   flex: 1;
-  margin-bottom: 10px;
   height: 40px;
   background-color: white;
   width: 90%;
@@ -214,10 +213,13 @@ html {
   align-items: center;
   justify-content: space-between;
   flex: 4;
+  height: 100%;
 }
 
 .categoryNameContainer {
   color: var(--color_gray);
+  font-size: 14px;
+  align-self: flex-start;
 }
 
 .categoryTotalContainer {
@@ -234,6 +236,7 @@ html {
   width: 100%;
   background-color: var(--color_green);
   height: 100px;
+  margin-top: 40px;
 }
 
 .addCategoryBtn {
@@ -259,6 +262,11 @@ html {
   justify-content: space-between;
   padding: 10px;
   width: 100%;
+  background-color: white;
+}
+
+.categoryTransactionDetailsTotal {
+  font-weight: bold;
 }
 
 .link-white {
