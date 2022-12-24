@@ -1,0 +1,43 @@
+<div class="transaktionsContainer">
+<div class="statusBar">
+  <div>
+    <%= link_to image_tag(asset_path('back-arrow-icon.svg'), class: 'backIcon'), authenticated_root_path  %>
+  </div>
+  <div>
+  <p class="statusBarTitle">
+    TRANSACTIONS
+    </p>
+  </div>
+  <% if user_signed_in? %>
+    <div>
+      <%= button_to 'SIGN OUT', destroy_user_session_path, method: :delete, data: {turbo: false}, class: 'link-white' %>
+    </div>
+  <% end %>
+</div>
+<div class="categoryTransactionDetails">
+<img src="<%= @categorie.icon %>" width=30 height=30>
+  <div class="categoryTransactionDetailsTotal">
+    Total Amount:
+    <%= @categorie.transaktion_categories.sum {|tc| tc.transaktion.amount } %>$
+  </div>
+</div>
+<div class="categoryCardsContainer">
+  <% @transaktions.order(created_at: :desc).each do |transaktion| %>
+    <div class="categoryCard">
+      <div class="categoryDetails">
+        <p class="categoryNameContainer">
+          <%= transaktion.name %>
+        </p>
+        <p class="categoryTotalContainer">
+          $<%= transaktion.amount %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+  <div class="newCategoryBtnContainer">
+    <%= link_to 'Add a new Transaction', new_category_transaktion_path(params[:category_id]), class: 'addCategoryBtn' %>
+  </div>
+</div>
+<div>
+</div>
+</div>

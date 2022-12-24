@@ -1,0 +1,278 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+:root {
+  --color_blue: #3778c2;
+  --color_green: #5fb523;
+  --color_gray: #434b54;
+}
+
+html {
+  background-color: #eee !important;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.splashContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 100vh;
+  background-color: white;
+}
+
+.splashContainerTop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 4;
+}
+
+.splashContainerBottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100% !important;
+  gap: 10px;
+}
+
+.btn {
+  flex: 1;
+  height: 40px;
+  width: 280px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  text-transform: uppercase;
+}
+
+.btnLogin {
+  background-color: var(--color_blue);
+  color: #eee;
+}
+
+.loginFormContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 10px;
+  width: 100%;
+
+  /* background-color: #3778c2; */
+}
+
+.new_user {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.formFieldsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.formField {
+  flex: 1;
+  height: 40px;
+  background-color: white;
+  width: 90%;
+  border: solid #eee 1px;
+  outline: none;
+  padding: 5px;
+}
+
+.noticeContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color_blue);
+}
+
+.notice {
+  color: white !important;
+}
+
+.categoriesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.transaktionsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.statusBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  height: 40px;
+  background-color: var(--color_blue);
+  width: 100%;
+}
+
+.statusBarTitle {
+  color: #eee;
+}
+
+.backIcon {
+  height: 20px;
+  width: 30px;
+}
+
+.categoryCardsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.cards:active,
+.cards:link,
+.cards:visited {
+  color: var(--color_gray);
+  text-decoration: none;
+}
+
+.categoryCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  padding: 10px;
+  gap: 10px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.categoryImageContainer {
+  flex: 1;
+}
+
+.categoryIcon {
+  height: 50px;
+  width: 50px;
+}
+
+.categoryDetails {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 4;
+  height: 100%;
+}
+
+.categoryNameContainer {
+  color: var(--color_gray);
+  font-size: 14px;
+  align-self: flex-start;
+}
+
+.categoryTotalContainer {
+  font-weight: bold;
+}
+
+.newCategoryBtnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color_green);
+  height: 100px;
+  margin-top: 40px;
+}
+
+.addCategoryBtn {
+  color: white;
+  padding: 5% 15%;
+  border: solid 1px white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.addCategoryBtnB {
+  color: white;
+  padding: 5% 15%;
+  border: solid 1px white;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+
+.categoryTransactionDetails {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  width: 100%;
+  background-color: white;
+}
+
+.categoryTransactionDetailsTotal {
+  font-weight: bold;
+}
+
+.link-white {
+  background-color: transparent;
+  color: white;
+  box-shadow: none;
+  border: none;
+  outline: none;
+}

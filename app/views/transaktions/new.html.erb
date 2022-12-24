@@ -1,0 +1,24 @@
+<%= form_with model: @transaktion, url: category_transaktions_path, local: true do |f| %>
+  <div class="statusBar">
+    <div>
+      <%= link_to image_tag(asset_path('back-arrow-icon.svg'), class: 'backIcon'), category_transaktions_path(@categorie) %>
+    </div>
+    <div>
+    <p class="statusBarTitle">
+    Add New Transaction
+    </p>
+    <div>
+    </div>
+    </div>
+    <div class="newCategoryBtnContainer">
+      <%= f.submit "SAVE", data: {turbo: false}, class: "addCategoryBtnB" %>
+    </div>
+  </div>
+  <div class="formFieldsContainer">
+  <%= f.text_field :name, placeholder: 'Name', class: 'formField' %>
+  <%= f.text_field :amount, placeholder: 'Amount', class: 'formField' %>
+  <div>
+    <%= f.select :id, options_for_select(@categories.collect { | x | [x.name, x.id] })%>
+  </div>
+  </div>
+<% end %>

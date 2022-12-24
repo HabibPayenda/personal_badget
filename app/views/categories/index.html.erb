@@ -1,0 +1,35 @@
+<div class="categoriesContainer">
+<div class="statusBar">
+<p class="statusBarTitle">
+    CATEGORIES
+    </p>
+    <% if user_signed_in? %>
+    <div>
+      <%= button_to 'SIGN OUT', destroy_user_session_path, method: :delete, data: {turbo: false}, class: 'link-white' %>
+    </div>
+  <% end %>
+  </div>
+<div class="categoryCardsContainer">
+  <% @categories.each do |categorie| %>
+    <%= link_to category_transaktions_path(categorie.id), class: 'cards' do %>
+      <div class="categoryCard">
+        <div class="categoryImageContainer">
+          <img src="<%= categorie.icon %>" class="categoryIcon" >
+        </div>
+        <div class="categoryDetails">
+          <div class="categoryNameContainer">
+            <%= categorie.name %>
+          </div>
+          <div class="categoryTotalContainer">
+            $<%= categorie.transaktion_categories.sum {|tc| tc.transaktion.amount } %>
+          </div>
+        </div>
+        </div>
+    <% end %>
+  <% end %>
+  <div class="newCategoryBtnContainer">
+    <%= link_to 'Add a new Category', new_category_path, class: 'addCategoryBtn' %>
+  </div>
+</div>
+
+</div>

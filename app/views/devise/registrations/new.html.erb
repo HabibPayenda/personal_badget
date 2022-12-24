@@ -1,0 +1,41 @@
+<div class="statusBar">
+    <div>
+      <%= link_to image_tag(asset_path('back-arrow-icon.svg'), class: 'backIcon'), unauthenticated_root_path %>
+    </div>
+    <div>
+      <p class="statusBarTitle">
+    Sign Up
+    </p>
+    </div>
+    <div>
+    </div>
+    </div>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+<div class="formFieldsContainer">
+<div class="field">
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Full Name", class: 'formField' %>
+  </div>
+
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: 'formField' %>
+  </div>
+
+  <div class="field">
+
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password", class: 'formField' %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password", class: 'formField' %>
+  </div>
+
+  </div>
+
+  <div class="newCategoryBtnContainer">
+    <%= f.submit "Sign up", class: "addCategoryBtnB" %>
+  </div>
+<% end %>
+
